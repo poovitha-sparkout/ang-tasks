@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="Master-Class">
     <div class="sub-div">
         
@@ -35,7 +35,7 @@
                 </div>
                 <img src="https://i.ibb.co/JQhVFDG/eiliv-aceron-Zu-IDLSz3-XLg-unsplash.jpg" alt="none" class="imagesrc1">
                 <!-- <a href="https://ibb.co/0QbyMKq"><img src="https://i.ibb.co/0QbyMKq/anh-nguyen-kc-A-c3f-3-FE-unsplash.jpg" alt="anh-nguyen-kc-A-c3f-3-FE-unsplash" border="0" /></a> -->
-                <div class="paddding-lft">
+                <!-- <div class="paddding-lft">
                     indian Food Contains rice,
                 </div>
             </div>
@@ -51,6 +51,74 @@
         <p class="paddding-lft">Total Product Price : {{value*1000}}</p>
         <button mat-raised-button color="primary" (click)="openPayment()"> Payment</button>
     </div>
+</div>
+
+<div class="Payments" *ngIf="Payment">
+    <img src="https://i.ibb.co/bm8GymM/Flat-tick-icon-svg.png" alt="none" class="imagesrc2">
+    
+    <p class="payment-succcess">Payment SuccessFull</p>
+    <mat-icon (click)="Payment=false" class="close-icon">close</mat-icon>
+</div> --> -->
+
+
+
+
+
+
+<div class="Master-Class">
+    <div class="sub-div">
+        
+    <div class="Main-Container">
+        <div *ngFor="let food of products">
+            <mat-card class="Head-Section" >
+            <div class="paddding-lft">
+                <p>{{food.name}}</p>
+            </div>
+            <img src="https://i.ibb.co/JQhVFDG/eiliv-aceron-Zu-IDLSz3-XLg-unsplash.jpg" alt="none" class="imagesrc">
+            <div class="paddding-lft">
+                {{food.description}}
+            </div>
+            <div class="wrapper paddding-lft">
+                <button mat-raised-button class="plusminus" (click)=" handleMinus(food) ">-</button>
+                <input type="number" class="num" [value]="food.quantity" [(ngModel)]="value" />
+                <button mat-raised-button class="plusminus" (click)="handlePlus(food)">+</button>
+            </div>
+            <p class="paddding-lft" *ngIf="value == 0" >Rs {{food.price}}</p>
+            <p class="paddding-lft" *ngIf="value !== 0" >Rs {{value*1000}}</p>
+        </mat-card></div>
+        
+    </div>
+    <div>
+        <button mat-raised-button color="primary" (click)="onCheckout()"> CheckOut</button>
+    </div>
+    </div>
+
+    <div class="Side-Container" *ngIf="openMenu">
+        <div *ngFor="let item of cart" class="cart-item">
+          <mat-card class="card-div" *ngIf="item.quantity>=1">
+            <div class="left">
+              <div class="paddding-lft">
+                <p>{{ item.name }}</p>
+              </div>
+              <img src="https://i.ibb.co/JQhVFDG/eiliv-aceron-Zu-IDLSz3-XLg-unsplash.jpg" alt="none" class="imagesrc1">
+              <div class="paddding-lft">
+                <p>{{ item.description }}</p>
+              </div>
+            </div>
+            <div class="right">
+              <div class="wrapper paddding-lft">
+                <button mat-raised-button class="plusminus" (click)="handleMinus(item)">-</button>
+                <input type="number" class="num" [value]="item.quantity" [(ngModel)]="item.quantity" />
+                <button mat-raised-button class="plusminus" (click)="handlePlus(item)">+</button>
+              </div>
+              <p class="paddding-lft">Rs {{ item.price * item.quantity }}</p>
+            </div>
+          </mat-card>
+        </div>
+        <p class="paddding-lft">Total Product Price: {{ calculateTotalPrice() }}</p>
+        <button mat-raised-button color="primary" (click)="openPayment()">Payment</button>
+      </div>
+      
 </div>
 
 <div class="Payments" *ngIf="Payment">
