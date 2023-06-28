@@ -1,0 +1,100 @@
+.Master-Class{
+    display: flex;
+    flex-direction: row;
+}
+.Main-Container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.Head-Section{
+    display:flex;
+    height:400px;
+    color: black;
+    flex-direction: column;
+    justify-content: space-around;
+    width:fit-content;
+    align-items: flex-start;
+    background-color: #e0dcdc;
+    margin: 5px;
+    margin-top: 50px;
+}
+.sub-div{
+    display: flex;
+    flex-direction: column;
+}
+.Side-Container{
+    width: 30%;
+    height: 100vh;
+    background-color: white;
+    margin-left: -20%;
+    z-index: 999999;
+}
+
+
+.wrapper{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+}
+.num{
+    width: 20%;
+    text-align: center;
+}
+.imagesrc{
+
+    height: 200px;
+    width: 100%;
+}
+.imagesrc1{
+
+    height: 68px;
+    width: 62%;
+    padding-left: 5px;
+}
+
+.imagesrc2{
+    position: inherit;
+    left: 45%;
+    top: 20%;
+}
+.plusminus{
+    background-color: brown !important;
+}
+
+.paddding-lft{
+    padding-left: 5px;
+    color: black;
+}
+.card-div{
+    display: flex;
+    color: black;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px    ;
+}
+
+.Payments{
+    width: 59%;
+    height: 50vh;
+    background-color: #e0dcdc;
+    position: relative;
+    top: -46%;
+    left: 18%;
+    z-index: 99999;
+    border: 1px green solid;
+    border-radius: 20px;
+}
+.payment-succcess{
+    position: inherit;
+    left: 38%;
+    top: 34%;
+    font-size: 24px;
+}
+.close-icon{
+    position: inherit;
+    top: -45%;
+    left: 3%;
+    color: red;
+}
