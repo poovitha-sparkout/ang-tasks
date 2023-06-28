@@ -3,69 +3,24 @@
     <div class="sub-div">
         
     <div class="Main-Container">
-        <mat-card class="Head-Section">
+        <div *ngFor="let food of products">
+            <mat-card class="Head-Section" >
             <div class="paddding-lft">
-                <p>Non Veg Meals</p>
+                <p>{{food.name}}</p>
             </div>
             <img src="https://i.ibb.co/JQhVFDG/eiliv-aceron-Zu-IDLSz3-XLg-unsplash.jpg" alt="none" class="imagesrc">
-            <!-- <a href="https://ibb.co/0QbyMKq"><img src="https://i.ibb.co/0QbyMKq/anh-nguyen-kc-A-c3f-3-FE-unsplash.jpg" alt="anh-nguyen-kc-A-c3f-3-FE-unsplash" border="0" /></a> -->
             <div class="paddding-lft">
-                indian Food Contains rice,
+                {{food.description}}
             </div>
             <div class="wrapper paddding-lft">
-                <button mat-raised-button class="plusminus" (click)="handleMinus()">-</button>
+                <button mat-raised-button class="plusminus" (click)=" handleMinus(food) ">-</button>
                 <input type="number" class="num" value="0" [(ngModel)]="value" />
-                <button mat-raised-button class="plusminus" (click)="handlePlus()">+</button>
+                <button mat-raised-button class="plusminus" (click)="handlePlus(food)">+</button>
             </div>
-            <p class="paddding-lft" *ngIf="value == 0" >Rs 1000</p>
+            <p class="paddding-lft" *ngIf="value == 0" >Rs {{food.price}}</p>
             <p class="paddding-lft" *ngIf="value !== 0" >Rs {{value*1000}}</p>
-        </mat-card>
-        <mat-card class="Head-Section">
-            <div class="paddding-lft">
-                <p>Non Veg Meals</p>
-            </div>
-            <img src="https://i.ibb.co/JQhVFDG/eiliv-aceron-Zu-IDLSz3-XLg-unsplash.jpg" alt="none" class="imagesrc">
-            <!-- <a href="https://ibb.co/0QbyMKq"><img src="https://i.ibb.co/0QbyMKq/anh-nguyen-kc-A-c3f-3-FE-unsplash.jpg" alt="anh-nguyen-kc-A-c3f-3-FE-unsplash" border="0" /></a> -->
-            <div class="paddding-lft">
-                indian Food Contains rice,
-            </div>
-            <div class="wrapper paddding-lft">
-                <button mat-raised-button class="plusminus" (click)="handleMinus()">-</button>
-                <input type="number" class="num" value="0"/>
-                <button mat-raised-button class="plusminus" (click)="handlePlus()">+</button>
-            </div>
-            <p class="paddding-lft">Rs 1000</p>
-        </mat-card><mat-card class="Head-Section">
-            <div class="paddding-lft">
-                <p>Non Veg Meals</p>
-            </div>
-            <img src="https://i.ibb.co/JQhVFDG/eiliv-aceron-Zu-IDLSz3-XLg-unsplash.jpg" alt="none" class="imagesrc">
-            <!-- <a href="https://ibb.co/0QbyMKq"><img src="https://i.ibb.co/0QbyMKq/anh-nguyen-kc-A-c3f-3-FE-unsplash.jpg" alt="anh-nguyen-kc-A-c3f-3-FE-unsplash" border="0" /></a> -->
-            <div class="paddding-lft">
-                indian Food Contains rice,
-            </div>
-            <div class="wrapper paddding-lft">
-                <button mat-raised-button class="plusminus" (click)="handleMinus()">-</button>
-                <input type="number" class="num" value="0" />
-                <button mat-raised-button class="plusminus" (click)="handlePlus()">+</button>
-            </div>
-            <p class="paddding-lft">Rs 1000</p>
-        </mat-card><mat-card class="Head-Section">
-            <div class="paddding-lft">
-                <p>Non Veg Meals</p>
-            </div>
-            <img src="https://i.ibb.co/JQhVFDG/eiliv-aceron-Zu-IDLSz3-XLg-unsplash.jpg" alt="none" class="imagesrc">
-            <!-- <a href="https://ibb.co/0QbyMKq"><img src="https://i.ibb.co/0QbyMKq/anh-nguyen-kc-A-c3f-3-FE-unsplash.jpg" alt="anh-nguyen-kc-A-c3f-3-FE-unsplash" border="0" /></a> -->
-            <div class="paddding-lft">
-                indian Food Contains rice,
-            </div>
-            <div class="wrapper paddding-lft">
-                <button mat-raised-button class="plusminus" (click)="handleMinus()">-</button>
-                <input type="number" class="num" value="0" />
-                <button mat-raised-button class="plusminus" (click)="handlePlus()">+</button>
-            </div>
-            <p class="paddding-lft">Rs 1000</p>
-        </mat-card>
+        </mat-card></div>
+        
     </div>
     <div>
         <button mat-raised-button color="primary" (click)="openMenu=!openMenu"> CheckOut</button>
@@ -86,9 +41,9 @@
             </div>
             <div class="right">
                 <div class="wrapper paddding-lft">
-                    <button mat-raised-button class="plusminus" (click)="handleMinus()">-</button>
+                    <button mat-raised-button class="plusminus" (click)="handleMinus(food)">-</button>
                     <input type="number" class="num" value="0" [(ngModel)]="value" />
-                    <button mat-raised-button class="plusminus" (click)="handlePlus()">+</button>
+                    <button mat-raised-button class="plusminus" (click)="handlePlus(food)">+</button>
                 </div>
                 <p class="paddding-lft">Rs 1000</p>
             </div>
